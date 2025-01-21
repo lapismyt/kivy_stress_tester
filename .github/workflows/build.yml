@@ -93,8 +93,6 @@ jobs:
       - name: Build Android APK
         working-directory: app
         run: |
-          buildozer init
-          sed -i 's/^title = .*/title = kivy_stress_tester/' buildozer.spec
           buildozer -v android release
 
       - name: Upload Android APK
