@@ -1,5 +1,8 @@
 import os
-os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
+import platform
+
+if platform.platform() == 'Windows':
+    os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 import kivy
 from kivy.app import App
@@ -14,7 +17,6 @@ import random
 import time
 import logging
 from fake_useragent import UserAgent
-import platform
 
 
 from kivy import Config
