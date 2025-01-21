@@ -86,7 +86,9 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt update
-          sudo apt install git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake libltdl-dev
+          sudo apt install git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev automake libltdl-dev
+          wget http://security.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2ubuntu0.1_amd64.deb
+          sudo apt install ./libtinfo5_6.3-2ubuntu0.1_amd64.deb
           export PATH=$PATH:~/.local/bin/
           pip install --upgrade cython
           pip install buildozer
