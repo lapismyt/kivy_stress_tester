@@ -1,0 +1,5 @@
+kivy
+requests
+fake-useragent
+pillow
+kivymd
