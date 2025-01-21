@@ -1,3 +1,6 @@
+import os
+os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
+
 import kivy
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -12,15 +15,12 @@ import time
 import logging
 from fake_useragent import UserAgent
 import platform
-import os
 
-# if platform.system() == 'Windows':
-#     os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
-# from kivy import Config
-# Config.set('graphics', 'multisamples', '0')
+from kivy import Config
+Config.set('graphics', 'multisamples', '0')
 
-os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
