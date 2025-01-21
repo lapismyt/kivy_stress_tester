@@ -12,7 +12,7 @@ on:
 
 jobs:
   build-linux:
-    name: Build Linux AppImage
+    name: Build Linux executable
     runs-on: ubuntu-latest
 
     steps:
@@ -32,14 +32,14 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Build Linux AppImage
+      - name: Build Linux executable
         run: |
           pyinstaller --name=kivy_stress_tester --onefile app/main.py
 
-      - name: Upload Linux AppImage
+      - name: Upload Linux executable
         uses: actions/upload-artifact@v3
         with:
-          name: Linux-AppImage
+          name: Linux-Executable
           path: dist/kivy_stress_tester
 
   build-windows:
