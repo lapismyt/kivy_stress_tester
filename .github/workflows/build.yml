@@ -86,7 +86,8 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt update
-          sudo apt install -y python3-dev python3-pip build-essential git zip openjdk-11-jdk libffi-dev libssl-dev
+          sudo apt install git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev automake libltdl-dev
+          export PATH=$PATH:~/.local/bin/
           pip install --upgrade cython
           pip install buildozer
 
