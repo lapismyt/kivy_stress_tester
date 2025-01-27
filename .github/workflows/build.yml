@@ -62,7 +62,7 @@ jobs:
 
       - name: Build Windows EXE
         run: |
-          export KIVY_GL_BACKEND=angle_sdl2
+          set KIVY_GL_BACKEND=angle_sdl2
           pyinstaller --name=kivy_stress_tester --onefile app/main.py
 
       - name: Upload Windows EXE
@@ -94,14 +94,16 @@ jobs:
           export PATH=$PATH:~/.local/bin/
           pip install --upgrade cython
           pip install buildozer
+          
 
       - name: Build Android APK
         working-directory: app
         run: |
+          cd app
           buildozer -v android release
 
       - name: Upload Android APK
         uses: actions/upload-artifact@v3
         with:
           name: Android-APK
-          path: app/bin/*.apk
+          path: bin/*.apk
